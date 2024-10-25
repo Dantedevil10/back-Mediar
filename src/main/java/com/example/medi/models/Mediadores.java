@@ -1,12 +1,13 @@
 package com.example.medi.models;
 
 import java.util.List;
+import java.util.UUID;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -18,8 +19,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "mediadores")
 public class Mediadores {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
+
+    public Mediadores() {
+        this.id = UUID.randomUUID();
+    }
 
     @Column(nullable = false)
     private String senha;
