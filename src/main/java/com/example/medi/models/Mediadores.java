@@ -23,6 +23,9 @@ public class Mediadores {
 
     @Column(nullable = false)
     private String senha;
+    
+    @Column(nullable = false)
+    private String email;
 
     @Column(nullable = false, length = 20)
     private String nomeUsuario;
