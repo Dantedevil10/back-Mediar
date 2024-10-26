@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Data
 @Entity
 @Table(name = "usuarios")
-public class Usuarios {
+public class Usuarios implements Participante {
     @Id
     private UUID id;
 

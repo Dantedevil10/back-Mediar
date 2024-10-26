@@ -3,6 +3,18 @@ package com.example.medi.dto;
 import com.example.medi.models.Mediadores.TribunalAtuacao;
 
 public class MediadoresDTO {
+    
+    private String id;
+    public MediadoresDTO(String id) {
+        this.id = id;
+    }
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+
     private String senha;
     private String nomeUsuario;
     private String cidadeAtuacao;
