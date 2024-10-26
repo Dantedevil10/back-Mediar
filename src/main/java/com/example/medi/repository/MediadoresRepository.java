@@ -7,5 +7,5 @@ import com.example.medi.models.Mediadores;
 
 public interface MediadoresRepository extends JpaRepository<Mediadores,UUID> {
     boolean existsByEmail(String email);
-    boolean existsByNome(String nomeUsuario);
+    boolean existsByNomeUsuario(String nomeUsuario);
 }

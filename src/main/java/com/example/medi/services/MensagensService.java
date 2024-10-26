@@ -2,7 +2,7 @@ package com.example.medi.services;
 
 import com.example.medi.dto.MensagensDTO;
 import com.example.medi.models.Mensagens;
-import com.example.medi.models.Participante;
+import com.example.medi.models.ParticipanteBase;
 import com.example.medi.models.Usuarios;
 import com.example.medi.repository.MediadoresRepository;
 import com.example.medi.repository.MensagensRepository;
@@ -29,10 +29,10 @@ public class MensagensService {
 
     public Mensagens enviarMensagem( MensagensDTO mensagensDTO) {
         // Determina se o remetente é um usuário ou um mediador
-        Participante remetente = buscarUsuarioOuMediador(mensagensDTO.getRemetente(), true);
+        ParticipanteBase remetente = buscarUsuarioOuMediador(mensagensDTO.getRemetente(), true);
 
         // Determina se o destinatário é um usuário ou um mediador
-        Participante destinatario = buscarUsuarioOuMediador(mensagensDTO.getDestinatario(), false);
+        ParticipanteBase destinatario = buscarUsuarioOuMediador(mensagensDTO.getDestinatario(), false);
 
         // Criar nova mensagem
         Mensagens mensagem = new Mensagens();
@@ -45,7 +45,7 @@ public class MensagensService {
         return mensagensRepository.save(mensagem);
     }
 
-    private Participante buscarUsuarioOuMediador(UUID id, boolean isRemetente) {
+    private ParticipanteBase buscarUsuarioOuMediador(UUID id, boolean isRemetente) {
         // Busca um usuário
         Usuarios usuario = usuariosRepository.findById(id).orElse(null);
         if (usuario != null) {

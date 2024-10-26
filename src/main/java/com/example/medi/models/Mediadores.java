@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Data
 @Entity
 @Table(name = "mediadores")
-public class Mediadores implements Participante {
+public class Mediadores extends ParticipanteBase {
     @Id
     private UUID id;
 

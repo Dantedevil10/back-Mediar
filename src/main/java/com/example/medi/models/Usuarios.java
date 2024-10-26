@@ -5,7 +5,6 @@ import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -15,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Data
 @Entity
 @Table(name = "usuarios")
-public class Usuarios implements Participante {
+public class Usuarios extends ParticipanteBase {
     @Id
     private UUID id;
 
@@ -38,20 +37,23 @@ public class Usuarios implements Participante {
     @Column(nullable = false, length = 20)
     private String nomeUsuario;
 
-    @OneToMany(mappedBy = "usuario")
-    @JsonIgnoreProperties("usuario")
+    // Relacionamento com processos abertos (que o usuário criou)
+    @OneToMany(mappedBy = "criador")  
+    @JsonIgnoreProperties("criador")
     private List<Processos> processosAbertos;
 
-    @OneToMany(mappedBy = "usuario")
-    @JsonIgnoreProperties("usuario")
+    // Para processos concluídos, você pode querer mudar a lógica
+    @OneToMany(mappedBy = "mediadorEscolhido")
+    @JsonIgnoreProperties("mediadorEscolhido")
     private List<Processos> processosConcluidos;
 
-    @OneToMany(mappedBy = "usuario")
-    @JsonIgnoreProperties("usuario")
+    // Relacionamentos adicionais conforme necessário
+    @OneToMany(mappedBy = "criador") // Se houver um campo que representa 'usuario' no futuro
+    @JsonIgnoreProperties("criador")
     private List<Processos> processosEmAnalise;
 
-    @OneToMany(mappedBy = "usuario")
-    @JsonIgnoreProperties("usuario")
+    @OneToMany(mappedBy = "criador") // Se houver um campo que representa 'usuario' no futuro
+    @JsonIgnoreProperties("criador")
     private List<Processos> processosEncerrados;
 
     @OneToMany(mappedBy = "remetente")

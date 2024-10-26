@@ -27,7 +27,7 @@ public class MediadoresService {
         if(mediadoresRepository.existsByEmail(mediadorDTO.getEmail())){
             throw new IllegalArgumentException("Email já cadastrado. Escolha outro email.");
         }
-        if(mediadoresRepository.existsByNome(mediadorDTO.getNomeUsuario())){
+        if(mediadoresRepository.existsByNomeUsuario(mediadorDTO.getNomeUsuario())){
             throw new IllegalArgumentException("Nome De Usuario já Existe. Escolha outro Nome.");
         }
 
