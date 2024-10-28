@@ -41,7 +41,7 @@ public class UsuariosService {
         return usuariosRepository.save(usuario);
     }
 
-    public Usuarios editarMediador( UUID id, UsuariosDTO usuariosDTO ){
+    public Usuarios editarUsuario( UUID id, UsuariosDTO usuariosDTO ){
         //Busca Usuario Pelo Id
         Usuarios usuario = usuariosRepository.findById(id)
         .orElseThrow(() -> new RuntimeException("Usuário não encontrado para o ID: " + id));

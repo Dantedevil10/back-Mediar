@@ -23,13 +23,17 @@ public class Mensagens {
     // Relacionamento com o remetente (usuário que envia a mensagem)
     @ManyToOne
     @JoinColumn(name = "remetente_id", nullable = false)
-    @JsonIgnoreProperties({"mensagensEnviadas", "mensagensRecebidas", "email"})
+    @JsonIgnoreProperties({"mensagensEnviadas", "mensagensRecebidas", "email","senha","tribunalAtuacao",
+    "cidadeAtuacao","titulacaoGraduacao","processosRecebidos","processosEmAnalise","processosFinalizados","id",
+    "cpf","processosAbertos","processosConcluidos","processosEncerrados"})
     private ParticipanteBase remetente;
 
     // Relacionamento com o destinatário (usuário que recebe a mensagem)
     @ManyToOne
     @JoinColumn(name = "destinatario_id", nullable = false)
-    @JsonIgnoreProperties({"mensagensEnviadas", "mensagensRecebidas", "email"})
+    @JsonIgnoreProperties({"mensagensEnviadas", "mensagensRecebidas", "email","senha","tribunalAtuacao",
+    "cidadeAtuacao","titulacaoGraduacao","processosRecebidos","processosEmAnalise","processosFinalizados","id",
+    "cpf","processosAbertos","processosConcluidos","processosEncerrados"})
     private ParticipanteBase destinatario;
 
     // Conteúdo da mensagem

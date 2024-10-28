@@ -56,6 +56,14 @@ public class Mediadores extends ParticipanteBase {
     @JsonIgnoreProperties("mediadorEscolhido")
     private List<Processos> processosFinalizados;
 
+    @OneToMany(mappedBy = "remetente")
+    @JsonIgnoreProperties("remetente")
+    private List<Mensagens> mensagensEnviadas;
+
+    @OneToMany(mappedBy = "destinatario")
+    @JsonIgnoreProperties("destinatario")
+    private List<Mensagens> mensagensRecebidas;
+
     public enum TribunalAtuacao {
         TODOS,
         ESTADUAL,

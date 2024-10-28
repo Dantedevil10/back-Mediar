@@ -5,9 +5,11 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -50,6 +52,35 @@ public class MediadoresController {
     public Mediadores criarMediador(@RequestBody MediadoresDTO mediDto){
 
         return mediadoresService.criarMediador(mediDto);
+    }
+
+    //PUT
+    @PutMapping("/editarMedi/{id}")
+    public ResponseEntity<Mediadores> editarMediador(@PathVariable UUID id ,@RequestBody  MediadoresDTO mediadoresDto){
+        try{
+            Mediadores updatedMediador = mediadoresService.editarMediador(id, mediadoresDto);
+
+            return ResponseEntity.ok(updatedMediador);
+
+        }catch(RuntimeException e){
+            // Soltar uma excessao se o usuario nao for encontrado ou essa caceta der problema
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    //DELETE
+    @DeleteMapping("/deletarMedi/{id}")
+    public ResponseEntity<Void> deletarUsuario(@PathVariable UUID id){
+       
+        try {
+            mediadoresService.deletarMediador(id);
+            return ResponseEntity.ok().build();
+        } catch (RuntimeException e) {
+            // Soltar uma excessao se o usuario nao for encontrado ou essa caceta der problema
+            return ResponseEntity.notFound().build();
+        }
+       
+        
     }
 
 }
