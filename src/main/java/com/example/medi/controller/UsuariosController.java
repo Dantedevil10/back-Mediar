@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.medi.dto.MediadoresDTO;
+
 import com.example.medi.dto.UsuariosDTO;
-import com.example.medi.models.Mediadores;
+
 import com.example.medi.models.Usuarios;
-import com.example.medi.repository.MensagensRepository;
+
 import com.example.medi.repository.UsuariosRepository;
 import com.example.medi.services.UsuariosService;
 
@@ -32,8 +32,7 @@ public class UsuariosController {
     @Autowired
     private UsuariosService usuariosService;
 
-    @Autowired
-    private MensagensRepository mensagensRepository;
+    
     
     //GETS
     @GetMapping //esse é o get para mostrar todos os usuários

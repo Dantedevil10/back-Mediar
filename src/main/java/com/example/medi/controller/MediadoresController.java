@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.medi.dto.MediadoresDTO;
 import com.example.medi.models.Mediadores;
-import com.example.medi.models.Usuarios;
+
 import com.example.medi.repository.MediadoresRepository;
-import com.example.medi.repository.MensagensRepository;
+
 import com.example.medi.services.MediadoresService;
 
 @RestController
@@ -31,8 +31,6 @@ public class MediadoresController {
     @Autowired
     private MediadoresRepository mediadoresRepository;
 
-    @Autowired
-    private MensagensRepository mensagensRepository;
 
     //GETS
     @GetMapping //esse é o get para mostrar todos os usuários

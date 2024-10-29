@@ -22,9 +22,6 @@ public class Usuarios extends ParticipanteBase {
         this.id = UUID.randomUUID();
     }
 
-    @Column(length = 15, nullable = false)
-    private String nome;
-
     @Column(nullable = false)
     private String email;
     

@@ -27,14 +27,13 @@ public class UsuariosService {
         if(usuariosRepository.existsByEmail(usuariosDTO.getEmail())){
             throw new IllegalArgumentException("Email já cadastrado. Escolha outro email.");
         }
-        if(usuariosRepository.existsByNome(usuariosDTO.getNomeUsuario())){
+        if(usuariosRepository.existsByNomeUsuario(usuariosDTO.getNomeUsuario())){
             throw new IllegalArgumentException("Nome De Usuario já Existe. Escolha outro Nome.");
         }
 
         Usuarios usuario = new Usuarios();
         usuario.setCpf(usuariosDTO.getCpf());
         usuario.setEmail(usuariosDTO.getEmail());
-        usuario.setNome(usuariosDTO.getNome());
         usuario.setNomeUsuario(usuariosDTO.getNomeUsuario());
         usuario.setSenha(usuariosDTO.getSenha());
 
@@ -48,7 +47,6 @@ public class UsuariosService {
 
         usuario.setCpf(usuariosDTO.getCpf());
         usuario.setEmail(usuariosDTO.getEmail());
-        usuario.setNome(usuariosDTO.getNome());
         usuario.setNomeUsuario(usuariosDTO.getNomeUsuario());
         usuario.setSenha(usuariosDTO.getSenha());
         

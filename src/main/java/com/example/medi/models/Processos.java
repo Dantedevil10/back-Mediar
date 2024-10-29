@@ -19,18 +19,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "processos")
 public class Processos {
     @Id
-    @Column(length = 36, nullable = false, unique = true)
-    private String id;
+    @Column(length = 20, nullable = false, unique = true)
+    private UUID id;
 
     // Construtor para gerar um novo ID
     public Processos() {
-        this.id = generateUniqueId();
+        this.id = UUID.randomUUID();
     }
 
-    private String generateUniqueId() {
-        // Gera um ID único que combina letras e números
-        return UUID.randomUUID().toString(); // pode modificar isso conforme necessário
-    }
 
     // Relacionamento com Usuário Comum
     @ManyToOne
