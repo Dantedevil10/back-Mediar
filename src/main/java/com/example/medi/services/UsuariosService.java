@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.medi.dto.MediadoresDTO;
+
 import com.example.medi.dto.UsuariosDTO;
-import com.example.medi.models.Mediadores;
+
 import com.example.medi.models.Usuarios;
 import com.example.medi.repository.MensagensRepository;
 import com.example.medi.repository.UsuariosRepository;

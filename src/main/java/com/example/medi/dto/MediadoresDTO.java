@@ -15,6 +15,7 @@ public class MediadoresDTO {
         this.id = id;
     }
 
+    private String cpf;
     private String senha;
     private String nomeUsuario;
     private String cidadeAtuacao;
@@ -23,14 +24,21 @@ public class MediadoresDTO {
     private String email;
 
     
-    public MediadoresDTO(String email,String senha, String nomeUsuario, String cidadeAtuacao, String titulacaoGraduacao,
+    public MediadoresDTO(String cpf, String email,String senha, String nomeUsuario, String cidadeAtuacao, String titulacaoGraduacao,
     TribunalAtuacao tribunalAtuacao) {
         this.senha = senha;
+        this.cpf = cpf;
         this.email = email;
         this.nomeUsuario = nomeUsuario;
         this.cidadeAtuacao = cidadeAtuacao;
         this.titulacaoGraduacao = titulacaoGraduacao;
         this.tribunalAtuacao = tribunalAtuacao;
+    }
+    public String getCpf() {
+        return cpf;
+    }
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
     public String getEmail() {
         return email;

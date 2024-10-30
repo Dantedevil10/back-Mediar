@@ -34,6 +34,9 @@ public class Usuarios extends ParticipanteBase {
     @Column(nullable = false, length = 20)
     private String nomeUsuario;
 
+    @Column(nullable = false)
+    private String tipoDeConta = "USUARIO";
+
     // Relacionamento com processos abertos (que o usuário criou)
     @OneToMany(mappedBy = "criador")  
     @JsonIgnoreProperties("criador")

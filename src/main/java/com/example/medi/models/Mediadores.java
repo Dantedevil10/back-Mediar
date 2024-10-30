@@ -27,6 +27,9 @@ public class Mediadores extends ParticipanteBase {
 
     @Column(nullable = false)
     private String senha;
+
+    @Column(nullable = false, unique = true, length = 11)
+    private String cpf;
     
     @Column(nullable = false)
     private String email;
@@ -43,6 +46,9 @@ public class Mediadores extends ParticipanteBase {
 
     @Column(nullable = false)
     private String titulacaoGraduacao;
+
+    @Column(nullable = false)
+    private String tipoDeConta = "MEDIADOR";
 
     @OneToMany(mappedBy = "mediadorEscolhido")
     @JsonIgnoreProperties("mediadorEscolhido")

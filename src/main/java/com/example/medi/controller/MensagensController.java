@@ -13,9 +13,11 @@ import com.example.medi.dto.MensagensDTO;
 import com.example.medi.models.Mensagens;
 import com.example.medi.repository.MensagensRepository;
 import com.example.medi.services.MensagensService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
 @RequestMapping("/mensagens")
+@CrossOrigin(origins = "http://localhost:4200")
 public class MensagensController {
 
     @Autowired

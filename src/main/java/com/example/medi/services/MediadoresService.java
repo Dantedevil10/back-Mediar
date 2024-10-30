@@ -33,6 +33,7 @@ public class MediadoresService {
 
         Mediadores mediador = new Mediadores();
         mediador.setEmail(mediadorDTO.getEmail());
+        mediador.setCpf(mediadorDTO.getCpf());
         mediador.setNomeUsuario(mediadorDTO.getNomeUsuario());
         mediador.setSenha(mediadorDTO.getSenha());
         mediador.setTribunalAtuacao(mediadorDTO.getTribunalAtuacao());
