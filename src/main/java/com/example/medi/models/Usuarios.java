@@ -22,6 +22,12 @@ public class Usuarios extends ParticipanteBase {
         this.id = UUID.randomUUID();
     }
 
+    // Em Usuarios e Mediadores (ambos são ParticipanteBase)
+    @OneToMany(mappedBy = "usuario")
+    @JsonIgnoreProperties("usuario")
+    private List<Contatos> contatos;
+
+
     @Column(nullable = false)
     private String email;
     
