@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "medi.jwtSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'medi.jwtSecret'"
+  },
+  {
+    "name": "medi.jwtExpirationsMs",
+    "type": "java.lang.String",
+    "description": "A description for 'medi.jwtExpirationsMs'"
+  }
+]}

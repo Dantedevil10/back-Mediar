@@ -1,6 +1,7 @@
 package com.example.medi.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,8 +20,10 @@ public class UsuariosService {
     private UsuariosRepository usuariosRepository;
 
     @Autowired
-    private MensagensRepository mensagensRepository;
+    private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private MensagensRepository mensagensRepository;
 
     public Usuarios criarUsuario( UsuariosDTO usuariosDTO){
 
@@ -35,8 +38,7 @@ public class UsuariosService {
         usuario.setCpf(usuariosDTO.getCpf());
         usuario.setEmail(usuariosDTO.getEmail());
         usuario.setNomeUsuario(usuariosDTO.getNomeUsuario());
-        usuario.setSenha(usuariosDTO.getSenha());
-
+        usuario.setSenha(passwordEncoder.encode(usuariosDTO.getSenha()));
         return usuariosRepository.save(usuario);
     }
 
@@ -48,7 +50,7 @@ public class UsuariosService {
         usuario.setCpf(usuariosDTO.getCpf());
         usuario.setEmail(usuariosDTO.getEmail());
         usuario.setNomeUsuario(usuariosDTO.getNomeUsuario());
-        usuario.setSenha(usuariosDTO.getSenha());
+        usuario.setSenha(passwordEncoder.encode(usuariosDTO.getSenha()));
         
         
         return usuariosRepository.save(usuario);

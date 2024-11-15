@@ -1,5 +1,4 @@
 package com.example.medi.models;
-import java.util.UUID;
 import jakarta.persistence.*;
 import lombok.Data;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

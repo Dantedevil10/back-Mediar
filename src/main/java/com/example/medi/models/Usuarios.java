@@ -8,13 +8,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.Data;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Data
 @Entity
 @Table(name = "usuarios")
-public class Usuarios extends ParticipanteBase {
+public class Usuarios extends ParticipanteBase { // Ultimas linhas de código - médotos de Usuarios
     @Id
     private UUID id;
 
@@ -69,4 +68,35 @@ public class Usuarios extends ParticipanteBase {
     @OneToMany(mappedBy = "destinatario")
     @JsonIgnoreProperties("destinatario")
     private List<Mensagens> mensagensRecebidas;
+
+
+    public CharSequence getSenha;
+
+
+    // Criação dos métodos abaixos (O sistema entendeu como necessário! Eu só aceitei)
+    public void setSenha(String senha2) {
+        throw new UnsupportedOperationException("Unimplemented method 'setSenha'");
+    }
+
+    public void setCpf(String cpf2) {
+        throw new UnsupportedOperationException("Unimplemented method 'setCpf'");
+    }
+
+    public void setEmail(String email2) {
+        throw new UnsupportedOperationException("Unimplemented method 'setEmail'");
+    }
+
+    public void setNomeUsuario(String nomeUsuario2) {
+        throw new UnsupportedOperationException("Unimplemented method 'setNomeUsuario'");
+    }
+
+    @Override
+    public String getEmail() {
+        throw new UnsupportedOperationException("Unimplemented method 'getEmail'");
+    }
+
+    @Override
+    public String getNomeUsuario() {
+        throw new UnsupportedOperationException("Unimplemented method 'getNomeUsuario'");
+    }
 }
