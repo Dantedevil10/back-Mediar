@@ -34,6 +34,7 @@ public class ProcessosService {
         return processosRepository.save(processo);
     }
 
+    @SuppressWarnings("unlikely-arg-type")
     public Processos editarProcesso( UUID id, ProcessosDTO proDTO ){
         //Busca Usuario Pelo Id
         Processos process = processosRepository.findById(id)
