@@ -60,14 +60,6 @@ public class Mediadores extends ParticipanteBase {
     @JsonIgnoreProperties("mediadorEscolhido")
     private List<Processos> processosRecebidos;
 
-    @OneToMany(mappedBy = "mediadorEscolhido")
-    @JsonIgnoreProperties("mediadorEscolhido")
-    private List<Processos> processosEmAnalise;
-
-    @OneToMany(mappedBy = "mediadorEscolhido")
-    @JsonIgnoreProperties("mediadorEscolhido")
-    private List<Processos> processosFinalizados;
-
     @OneToMany(mappedBy = "remetente")
     @JsonIgnoreProperties("remetente")
     private List<Mensagens> mensagensEnviadas;

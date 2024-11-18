@@ -31,13 +31,17 @@ public class Processos {
     // Relacionamento com Usuário Comum
     @ManyToOne
     @JoinColumn(name = "criador_id", nullable = false)
-    @JsonIgnoreProperties("processos")
+    @JsonIgnoreProperties({"processos","mensagensEnviadas","contatos", "mensagensRecebidas", "email","senha","tribunalAtuacao",
+    "cidadeAtuacao","titulacaoGraduacao","processosRecebidos","processosEmAnalise","processosFinalizados",
+    "cpf","processosAbertos","processosConcluidos","processosEncerrados"})
     private Usuarios criador;  // Usuário comum que iniciou o processo
 
     // Relacionamento com Mediador
     @ManyToOne
     @JoinColumn(name = "mediador_id")
-    @JsonIgnoreProperties("processos")
+    @JsonIgnoreProperties({"processos","mensagensEnviadas","contatos", "mensagensRecebidas", "email","senha","tribunalAtuacao",
+    "cidadeAtuacao","titulacaoGraduacao","processosRecebidos","processosEmAnalise","processosFinalizados",
+    "cpf","processosAbertos","processosConcluidos","processosEncerrados"})
     private Mediadores mediadorEscolhido;  // Mediador que analisará o processo
 
     // Status do processo
@@ -51,7 +55,7 @@ public class Processos {
     @Column(nullable = false)
     private String nomeReu;
 
-    @Column(nullable = false, unique = true, length = 11)
+    @Column(nullable = false, length = 11)
     private String cpfAutor;
 
     @Column(nullable = false, length = 255)

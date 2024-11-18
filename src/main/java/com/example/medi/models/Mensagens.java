@@ -32,7 +32,7 @@ public class Mensagens {
     @ManyToOne
     @JoinColumn(name = "destinatario_id", nullable = false)
     @JsonIgnoreProperties({"mensagensEnviadas","contatos", "mensagensRecebidas", "email","senha","tribunalAtuacao",
-    "cidadeAtuacao","titulacaoGraduacao","processosRecebidos","processosEmAnalise","processosFinalizados","id",
+    "cidadeAtuacao","titulacaoGraduacao","processosRecebidos","processosEmAnalise","processosFinalizados",
     "cpf","processosAbertos","processosConcluidos","processosEncerrados"})
     private ParticipanteBase destinatario;
 

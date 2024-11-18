@@ -32,8 +32,8 @@ public class ProcessosController {
     private ProcessosRepository processRepository;
 
     //GETS
-    @GetMapping //esse é o get para mostrar todos os usuários
-    public List<Processos> listaMediadores(){
+    @GetMapping //esse é o get para mostrar todos 
+    public List<Processos> listaProcessos(){
         return processRepository.findAll();
     }
     @GetMapping("/{id}") //esse é o get para mostrar o usuario pelo seu ID Unico
@@ -45,9 +45,9 @@ public class ProcessosController {
     }
 
     //POST
-    @PostMapping("criarProcesso")
-    public Processos criarProcesso(@RequestBody ProcessosDTO ProDto){
-
+    @PostMapping("/criarProcesso")
+    public Processos criarProcesso(@RequestBody ProcessosDTO ProDto) {
+        // Passe o criadorId para o serviço ao criar o processo
         return processService.criarProcesso(ProDto);
     }
 

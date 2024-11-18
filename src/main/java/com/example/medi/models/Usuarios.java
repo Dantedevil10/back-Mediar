@@ -48,20 +48,6 @@ public class Usuarios extends ParticipanteBase {
     @JsonIgnoreProperties("criador")
     private List<Processos> processosAbertos;
 
-    // Para processos concluídos, você pode querer mudar a lógica
-    @OneToMany(mappedBy = "mediadorEscolhido")
-    @JsonIgnoreProperties("mediadorEscolhido")
-    private List<Processos> processosConcluidos;
-
-    // Relacionamentos adicionais conforme necessário
-    @OneToMany(mappedBy = "criador") // Se houver um campo que representa 'usuario' no futuro
-    @JsonIgnoreProperties("criador")
-    private List<Processos> processosEmAnalise;
-
-    @OneToMany(mappedBy = "criador") // Se houver um campo que representa 'usuario' no futuro
-    @JsonIgnoreProperties("criador")
-    private List<Processos> processosEncerrados;
-
     @OneToMany(mappedBy = "remetente")
     @JsonIgnoreProperties("remetente")
     private List<Mensagens> mensagensEnviadas;
